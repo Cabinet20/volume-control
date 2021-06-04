@@ -28,4 +28,5 @@ if (window.DeviceOrientationEvent) {
 
 var handleOrientationEvent = function(frontToBack, leftToRight, rotateDegrees) {
     // do something amazing
+    document.getElementById('output').innerHTML = frontToBack + ', ' + leftToRight + ', ' + rotateDegrees;
 };
