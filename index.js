@@ -22,6 +22,8 @@ if (window.DeviceOrientationEvent) {
 
         handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
     }, true);
+} else {
+	alert('no orientation');
 }
 
 var handleOrientationEvent = function(frontToBack, leftToRight, rotateDegrees) {
