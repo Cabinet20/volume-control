@@ -1,3 +1,5 @@
+alert('running')
+
 DeviceOrientationEvent.requestPermission().then(res => {
 	alert(res);
   console.log(res);
