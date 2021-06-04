@@ -1,6 +1,7 @@
 alert('running')
 
-window.DeviceOrientationEvent.requestPermission().then(res => {
+function startCheckingDeviceOrientation()() {
+    window.DeviceOrientationEvent.requestPermission().then(res => {
 	alert(res);
   console.log('permission', res);
   if (res === 'granted') {
@@ -10,6 +11,7 @@ window.DeviceOrientationEvent.requestPermission().then(res => {
     });
   }
 });
+}
 
 if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", function(event) {
