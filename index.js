@@ -1,8 +1,8 @@
 alert('running')
 
-DeviceOrientationEvent.requestPermission().then(res => {
+window.DeviceOrientationEvent.requestPermission().then(res => {
 	alert(res);
-  console.log(res);
+  console.log('permission', res);
   if (res === 'granted') {
     window.addEventListener('deviceorientation', (e) => {
 	  document.getElementById('output').innerHTML = e;
@@ -10,3 +10,20 @@ DeviceOrientationEvent.requestPermission().then(res => {
     });
   }
 });
+
+if (window.DeviceOrientationEvent) {
+    window.addEventListener("deviceorientation", function(event) {
+        // alpha: rotation around z-axis
+        var rotateDegrees = event.alpha;
+        // gamma: left to right
+        var leftToRight = event.gamma;
+        // beta: front back motion
+        var frontToBack = event.beta;
+
+        handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+    }, true);
+}
+
+var handleOrientationEvent = function(frontToBack, leftToRight, rotateDegrees) {
+    // do something amazing
+};
