@@ -4,13 +4,13 @@ function startCheckingDeviceOrientation() {
   		console.log('permission', res);
   		if (res === 'granted') {
     		window.addEventListener('deviceorientation', (e) => {
-				 let vol = e.gamma / 90 * 100;
+				let vol = e.gamma / 90 * 100;
 				vol = Math.min(500, Math.abs(Math.round(vol)));
-	  	document.getElementById('output').innerHTML = 'Volume at ' +  vol + '%';
-     	 //uconsole.log(e);
-    });	
-  }
-});
+				document.getElementById("slider-bar").style.width = vol + "%";
+	  			document.getElementById('output').innerHTML = 'Volume at ' +  vol + '%';
+			});	
+  		}
+	});
 }
 
 // if (window.DeviceOrientationEvent) {
